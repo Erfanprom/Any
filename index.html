@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>این سایت چطور ساخته شده؟</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;--bg:#fff;--sub:#f6f8fa;--bd:#d0d7de;--tx:#1f2328;--mu:#656d76;--lk:#0969da;--pri:#1f883d;--prih:#1a7f37;--ok:#1a7f37;--okb:#dafbe1;--wn:#9a6700;--wnb:#fff8c5;--no:#57606a;--nob:#eaeef2}
+:root[data-t=dark]{color-scheme:dark;--bg:#0d1117;--sub:#161b22;--bd:#30363d;--tx:#e6edf3;--mu:#8d96a0;--lk:#4493f8;--pri:#238636;--prih:#2ea043;--ok:#3fb950;--okb:rgba(46,160,67,.15);--wn:#d29922;--wnb:rgba(187,128,9,.15);--no:#8d96a0;--nob:#21262d}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:14px/1.7 Vazirmatn,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif}
+.top{display:flex;align-items:center;gap:10px;padding:12px 20px;background:var(--sub);border-bottom:1px solid var(--bd)}
+.top b{font-size:15px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.top .btn{margin-inline-start:auto}
+main{max-width:760px;margin:0 auto;padding:40px 16px 72px}
+h1{font-size:30px;font-weight:700;line-height:1.4;margin:0 0 6px;text-align:center}
+.sub{color:var(--mu);font-size:15px;margin:0 0 28px;text-align:center}
+.box{border:1px solid var(--bd);border-radius:8px;margin-top:16px;overflow:hidden}
+.bh{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 16px;background:var(--sub);border-bottom:1px solid var(--bd);font-weight:700}
+.bb{padding:14px 16px}
+form{display:flex;gap:8px;flex-wrap:wrap}
+input,textarea{font:inherit;color:var(--tx);background:var(--bg);border:1px solid var(--bd);border-radius:6px;padding:6px 12px}
+input{flex:1 1 240px;direction:ltr;text-align:left}
+textarea{width:100%;height:120px;margin-top:8px;direction:ltr;text-align:left;font:12px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace}
+input:focus,textarea:focus,.btn:focus-visible,summary:focus-visible{outline:2px solid var(--lk);outline-offset:-1px}
+.btn{font:inherit;font-weight:600;font-size:14px;padding:5px 16px;border-radius:6px;border:1px solid var(--bd);background:var(--sub);color:var(--tx);cursor:pointer}
+.pri{background:var(--pri);border-color:rgba(31,35,40,.15);color:#fff}
+.pri:hover:not(:disabled){background:var(--prih)}
+.btn:disabled{opacity:.55;cursor:wait}
+details{margin-top:12px;color:var(--mu)}
+summary{cursor:pointer;font-size:13px}
+#st{margin:10px 0 0;min-height:1.7em;color:var(--mu);font-size:13px}
+.lbl{border:1px solid currentColor;border-radius:2em;padding:0 10px;font-size:12px;font-weight:600;white-space:nowrap}
+.lbl.ok{color:var(--ok);background:var(--okb)}.lbl.wn{color:var(--wn);background:var(--wnb)}.lbl.no{color:var(--no);background:var(--nob)}
+.meter{height:8px;border-radius:4px;background:var(--nob);overflow:hidden;margin-bottom:12px}
+.meter i{display:block;height:100%;background:var(--ok);transition:width .5s}
+ul{margin:0 0 4px;padding:0 18px;color:var(--mu);font-size:13px}
+dl{margin:0}
+.row{display:flex;gap:12px;padding:8px 0;border-bottom:1px solid var(--bd)}
+.row:last-child{border:0;padding-bottom:0}
+dt{width:150px;flex:none;color:var(--mu)}dd{margin:0;word-break:break-word}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.chips span{border:1px solid var(--bd);background:var(--sub);color:var(--lk);border-radius:2em;padding:0 10px;font-size:12px;font-weight:600}
+.none{color:var(--mu);margin:0}
+.note{color:var(--mu);font-size:12px;margin:20px 4px 0}
+@media(max-width:520px){.row{flex-direction:column;gap:0}dt{width:auto}h1{font-size:24px}}
+@media(prefers-reduced-motion:reduce){.meter i{transition:none}}
+</style>
+<script>try{document.documentElement.dataset.t=localStorage.getItem('t')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+</head>
+<body>
+<header class="top">
+<svg width="22" height="22" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5 14 14"/></svg>
+<b>site-analyzer</b>
+<button class="btn" id="tg" type="button" aria-label="تغییر تم"></button>
+</header>
+<main>
+<h1>این سایت چطور ساخته شده؟</h1>
+<p class="sub">وردپرس‌بودن، تاریخ تقریبی ساخت و ردپای هوش مصنوعی را از کد صفحه پیدا کنید.</p>
+<div class="box"><div class="bb">
+<form id="f">
+<input id="u" placeholder="example.ir" autocomplete="off" inputmode="url" aria-label="آدرس سایت">
+<button class="btn pri" id="go" disabled>بررسی سایت</button>
+</form>
+<details id="man"><summary>دریافت خودکار جواب نداد؟ سورس صفحه را دستی بچسبانید</summary>
+<textarea id="src" placeholder="در مرورگر view-source:آدرس-سایت را باز کنید، همه را کپی کنید و اینجا بچسبانید"></textarea>
+</details>
+<p id="st" role="status">در حال آماده‌سازی موتور پایتون…</p>
+</div></div>
+<div id="out"></div>
+</main>
+
+<script type="text/plain" id="pycode">
+import re, json
+from collections import Counter
+
+TECH = {
+ 'Elementor': ['elementor'], 'WooCommerce': ['woocommerce'],
+ 'Divi': ['et_pb_section', '/themes/divi'], 'WPBakery': ['js_composer', 'vc_row'],
+ 'Yoast SEO': ['yoast seo'], 'Rank Math': ['rank math'],
+ 'Cloudflare': ['cdn-cgi/'], 'jQuery': ['jquery'], 'Bootstrap': ['bootstrap'],
+ 'Tailwind CSS': ['tailwind'], 'Next.js': ['__next_data__', '/_next/'],
+ 'Vue / Nuxt': ['__nuxt', 'data-v-'], 'Angular': ['ng-version'],
+ 'Shopify': ['cdn.shopify.com'], 'Wix': ['wixstatic.com'],
+ 'Webflow': ['data-wf-page'], 'Squarespace': ['squarespace'],
+ 'Joomla': ['joomla'], 'Google Tag / Analytics': ['googletagmanager', 'google-analytics'],
+}
+AI = {
+ 'Lovable / GPT Engineer': ['lovable.dev', 'lovable-uploads', 'gptengineer', 'gpt-engineer'],
+ 'Bolt.new / StackBlitz': ['bolt.new', 'stackblitz'],
+ 'v0 (Vercel)': ['v0.dev', 'v0.app', 'vusercontent.net'],
+ 'Framer AI': ['framerusercontent.com'],
+ 'Base44': ['base44'], 'Replit': ['replit.app', 'repl.co'],
+ 'Durable': ['durable.co'], '10Web AI': ['10web'], 'Zyro / Hostinger AI': ['zyrosite.com'],
+}
+
+def analyze(html, extra_json):
+    ex = json.loads(extra_json)
+    low = html.lower()
+    M = []
+    for t in re.findall(r'<meta\b[^>]*>', html, re.I):
+        k = re.search(r'(?:name|property)\s*=\s*["\']([^"\']+)', t, re.I)
+        v = re.search(r'content\s*=\s*["\']([^"\']*)', t, re.I)
+        if k and v:
+            M.append((k.group(1).lower(), v.group(1)))
+    gens = [v for k, v in M if k == 'generator']
+
+    sig = []
+    wpg = [g for g in gens if g.lower().startswith('wordpress')]
+    if 'wp-content/' in low: sig.append(('پوشهٔ wp-content در کد صفحه', 3))
+    if 'wp-includes/' in low: sig.append(('پوشهٔ wp-includes در کد صفحه', 2))
+    if wpg: sig.append(('تگ generator وردپرس', 3))
+    if 'api.w.org' in low: sig.append(('لینک API وردپرس (api.w.org)', 2))
+    if 'wp-emoji-release' in low: sig.append(('اسکریپت ایموجی وردپرس', 1))
+    if ex.get('wpjson') is True: sig.append(('آدرس /wp-json/ پاسخ وردپرسی داد', 4))
+    score = sum(w for _, w in sig)
+    ver = None
+    if wpg:
+        m = re.search(r'[\d.]+', wpg[0])
+        ver = m.group(0) if m else None
+    themes = re.findall(r'wp-content/themes/([^/"\'?\s]+)', html, re.I)
+    plugins = sorted(set(re.findall(r'wp-content/plugins/([^/"\'?\s]+)', html, re.I)))
+    wp = dict(verdict='yes' if score >= 3 else 'maybe' if score else 'no', score=score,
+              signals=[s for s, _ in sig], version=ver,
+              theme=Counter(themes).most_common(1)[0][0] if themes else None,
+              plugins=plugins[:15])
+
+    tech = [n for n, ks in TECH.items() if any(k in low for k in ks)]
+
+    hits = [n for n, ks in AI.items() if any(k in low for k in ks)]
+    weak = []
+    if re.search(r'/assets/index-[\w-]{6,}\.(?:js|css)', html): weak.append('فایل‌های Vite با نام index-…')
+    if re.search(r'<div id=["\']root["\']>\s*</div>', html): weak.append('صفحهٔ خالی با div#root')
+    if 'tailwind' in low or len(re.findall(r'class="[^"]*\b(?:bg|text|px|py|flex)-', html)) > 30: weak.append('Tailwind CSS')
+    if 'data-radix' in low or 'lucide' in low: weak.append('کتابخانه‌های shadcn / Lucide')
+    level = 'strong' if hits else 'weak' if len(weak) >= 2 else 'none'
+
+    D = []
+    for key, lab in (('article:published_time', 'انتشار (متا)'), ('article:modified_time', 'آخرین ویرایش (متا)'), ('og:updated_time', 'به‌روزرسانی (متا)')):
+        for k, v in M:
+            if k == key:
+                D.append([lab, v[:10]]); break
+    for key, lab in (('datePublished', 'انتشار (JSON-LD)'), ('dateModified', 'ویرایش (JSON-LD)')):
+        m = re.search(r'"%s"\s*:\s*"([^"]+)"' % key, html)
+        if m: D.append([lab, m.group(1)[:10]])
+    up = re.findall(r'wp-content/uploads/((?:19|20)\d\d)/(\d\d)/', html)
+    if up:
+        a, b = min(up), max(up)
+        D.append(['قدیمی‌ترین فایل آپلودشده در صفحه', '%s-%s' % a])
+        if a != b: D.append(['جدیدترین فایل آپلودشده در صفحه', '%s-%s' % b])
+    cy = re.search(r'(?:©|&copy;|copyright)[^0-9]{0,25}((?:19|20)\d\d)', html, re.I)
+    if cy: D.append(['سال کپی‌رایت فوتر', cy.group(1)])
+    w = ex.get('wayback')
+    if w: D.append(['اولین نسخهٔ بایگانی‌شده (archive.org)', '%s-%s-%s' % (w[:4], w[4:6], w[6:8])])
+
+    t = re.search(r'<title[^>]*>(.*?)</title>', html, re.I | re.S)
+    return json.dumps(dict(title=t.group(1).strip()[:120] if t else '', wp=wp, tech=tech,
+                           ai=dict(level=level, hits=hits, weak=weak), dates=D), ensure_ascii=False)
+</script>
+
+<script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+const setSt = t => { $('st').textContent = t; };
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+const pyReady = (async () => {
+  const py = await loadPyodide();
+  py.runPython($('pycode').textContent);
+  return py.globals.get('analyze');
+})();
+pyReady.then(() => { $('go').disabled = false; setSt(''); })
+       .catch(() => setSt('بارگذاری پایتون ناموفق بود؛ اینترنت را بررسی و صفحه را دوباره باز کنید.'));
+
+const PROXIES = [
+  u => 'https://api.allorigins.win/raw?url=' + encodeURIComponent(u),
+  u => 'https://corsproxy.io/?url=' + encodeURIComponent(u),
+  u => 'https://api.codetabs.com/v1/proxy?quest=' + encodeURIComponent(u)
+];
+async function fetchVia(u) {
+  for (const p of PROXIES) {
+    try {
+      const c = new AbortController(), t = setTimeout(() => c.abort(), 15000);
+      const r = await fetch(p(u), { signal: c.signal });
+      clearTimeout(t);
+      if (r.ok) { const x = await r.text(); if (x.trim()) return x; }
+    } catch (e) {}
+  }
+  return null;
+}
+async function probe(origin) {
+  const t = await fetchVia(origin + '/wp-json/');
+  try { const j = JSON.parse(t); return !!(j && (j.namespaces || j.routes)); } catch (e) { return null; }
+}
+async function wayback(host) {
+  try {
+    const r = await fetch('https://archive.org/wayback/available?url=' + encodeURIComponent(host) + '&timestamp=19960101');
+    const j = await r.json();
+    return (j.archived_snapshots && j.archived_snapshots.closest && j.archived_snapshots.closest.timestamp) || null;
+  } catch (e) { return null; }
+}
+
+function show(r) {
+  const V = { yes: ['وردپرس است', 'ok'], maybe: ['احتمالاً وردپرس', 'wn'], no: ['وردپرس نیست', 'no'] }[r.wp.verdict];
+  const A = { strong: ['ردپا پیدا شد', 'ok'], weak: ['فقط حدس', 'wn'], none: ['ردپایی نیست', 'no'] }[r.ai.level];
+  const li = a => a.length ? '<ul>' + a.map(x => `<li>${esc(x)}</li>`).join('') + '</ul>' : '';
+  const row = (k, v) => v ? `<div class="row"><dt>${k}</dt><dd><bdi>${v}</bdi></dd></div>` : '';
+  const chips = a => '<div class="chips">' + a.map(x => `<span>${esc(x)}</span>`).join('') + '</div>';
+  const L = v => `<span class="lbl ${v[1]}">${v[0]}</span>`;
+  const box = (t, lbl, body) => `<section class="box"><div class="bh"><span>${t}</span>${lbl}</div><div class="bb">${body}</div></section>`;
+  $('out').innerHTML =
+    (r.title ? box('عنوان صفحه', '', `<bdi>${esc(r.title)}</bdi>`) : '') +
+    box('وردپرس', L(V),
+      `<div class="meter"><i style="width:${Math.min(100, r.wp.score * 100 / 8)}%"></i></div>${li(r.wp.signals)}` +
+      `<dl>${row('نسخهٔ وردپرس', r.wp.version && esc(r.wp.version))}${row('قالب', r.wp.theme && esc(r.wp.theme))}${row('افزونه‌ها', r.wp.plugins.length && r.wp.plugins.map(esc).join('، '))}</dl>`) +
+    box('هوش مصنوعی', L(A), (r.ai.hits.length ? chips(r.ai.hits) : '') + li(r.ai.weak) + (r.ai.hits.length || r.ai.weak.length ? '' : '<p class="none">نشانه‌ای از ابزارهای ساخت خودکار پیدا نشد.</p>')) +
+    box('تاریخ ساخت (تقریبی)', '', r.dates.length ? '<dl>' + r.dates.map(d => row(esc(d[0]), esc(d[1]))).join('') + '</dl>' : '<p class="none">تاریخی پیدا نشد.</p>') +
+    box('فناوری‌های پیداشده', '', r.tech.length ? chips(r.tech) : '<p class="none">چیزی شناسایی نشد.</p>') +
+    '<p class="note">تاریخ‌ها فقط تخمین‌اند؛ قدیمی‌ترین نسخهٔ بایگانی به معنی تاریخ دقیق ساخت نیست. تشخیص هوش مصنوعی فقط بر اساس ردپای ابزارها است و نبودن ردپا ثابت نمی‌کند که هوش مصنوعی کمک نکرده.</p>';
+}
+
+async function run() {
+  const raw = $('u').value.trim(), paste = $('src').value.trim();
+  if (!raw && !paste) return setSt('آدرس سایت را وارد کنید.');
+  let u = null;
+  if (raw) {
+    try { u = new URL(/^https?:\/\//i.test(raw) ? raw : 'https://' + raw); }
+    catch (e) { return setSt('آدرس معتبر نیست.'); }
+  }
+  $('go').disabled = true; $('out').innerHTML = '';
+  try {
+    let html = paste;
+    if (!html) {
+      setSt('در حال دریافت صفحه…');
+      html = await fetchVia(u.href);
+      if (!html) { $('man').open = true; return setSt('دریافت خودکار ممکن نشد (ممکن است سایت دسترسی از خارج ایران را بسته باشد). سورس صفحه را دستی بچسبانید.'); }
+    }
+    setSt('در حال بررسی…');
+    const [wj, wb] = u ? await Promise.all([probe(u.origin), wayback(u.hostname)]) : [null, null];
+    const analyze = await pyReady;
+    show(JSON.parse(analyze(html, JSON.stringify({ wpjson: wj, wayback: wb }))));
+    setSt('');
+  } catch (e) { setSt('خطا: ' + e.message); }
+  finally { $('go').disabled = false; }
+}
+const root = document.documentElement;
+const paint = () => { $('tg').textContent = root.dataset.t === 'dark' ? '☀ حالت روشن' : '☾ حالت تیره'; };
+paint();
+$('tg').onclick = () => {
+  root.dataset.t = root.dataset.t === 'dark' ? 'light' : 'dark';
+  try { localStorage.setItem('t', root.dataset.t); } catch (e) {}
+  paint();
+};
+$('f').onsubmit = e => { e.preventDefault(); run(); };
+</script>
+</body>
+</html>
